@@ -1,0 +1,136 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+
+metadata:
+  name: helmcharts.helm.cattle.io
+  namespace: kube-system
+
+spec:
+  group: helm.cattle.io
+  scope: Namespaced
+  names:
+    kind: HelmChart
+    listKind: HelmChartList
+    plural: helmcharts
+    shortNames: []
+    singular: helmchart
+    categories:
+      - helm
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          description:
+          type: object
+          required:
+            - spec
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+              type: string
+            kind:
+              description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+              type: string
+            metadata:
+              type: object
+            spec:
+              description: Desired state of the HelmChart resource.
+              type: object
+              required: []
+              properties:
+                targetNamespace:
+                  description:
+                  type: string
+                chart:
+                  description:
+                  type: string
+                version:
+                  description:
+                  type: string
+                repo:
+                  description:
+                  type: string
+                repoCA:
+                  description:
+                  type: string
+                set:
+                  description:
+                  type: object
+                  x-kubernetes-preserve-unknown-fields: true
+                valuesContent:
+                  description:
+                  type: string
+                helmVersion:
+                  description:
+                  type: string
+                bootstrap:
+                  description:
+                  type: boolean
+                chartContent:
+                  description:
+                  type: string
+                jobImage:
+                  description:
+                  type: string
+                timeout:
+                  description:
+                  type: string
+                failurePolicy:
+                  description:
+                  type: string
+
+...
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+
+metadata:
+  name: helmchartconfigs.helm.cattle.io
+  namespace: kube-system
+
+spec:
+  group: helm.cattle.io
+  scope: Namespaced
+  names:
+    kind: HelmChartConfig
+    listKind: HelmChartConfigList
+    plural: helmchartconfigs
+    shortNames: []
+    singular: helmchartconfig
+    categories:
+      - helm
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          description:
+          type: object
+          required:
+            - spec
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+              type: string
+            kind:
+              description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+              type: string
+            metadata:
+              type: object
+            spec:
+              description: Desired state of the HelmChartConfig resource.
+              type: object
+              required: []
+              properties:
+                valuesContent:
+                  description:
+                  type: string
+                failurePolicy:
+                  description:
+                  type: string
+
+...

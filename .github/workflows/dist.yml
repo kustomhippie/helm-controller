@@ -1,0 +1,33 @@
+---
+name: readme
+
+'on':
+  push:
+    branches:
+      - master
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Build manifest
+        uses: actionhippie/kustomize@v1
+        with:
+          version: 4.4.0
+          target: dist/manifest.yml
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: github@webhippie.de
+          add: dist/manifest.yml
+          message: automated dist update [skip ci]
+          push: true
+          commit: --signoff
+
+...
