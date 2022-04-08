@@ -11,6 +11,6 @@ resources:
 images:
   - name: helm-controller
     newName: rancher/helm-controller
-    newTag: "v0.12.0"
+    newTag: "v0.12.1"
 
 ...
