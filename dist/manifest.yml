@@ -182,7 +182,7 @@ spec:
       containers:
       - command:
         - helm-controller
-        image: rancher/helm-controller:v0.12.0
+        image: rancher/helm-controller:v0.12.1
         imagePullPolicy: IfNotPresent
         name: server
         resources:
