@@ -30,6 +30,25 @@ spec:
       enableServiceLinks: false
       serviceAccountName: helm-controller
 
+      tolerations:
+        - key: "node.cloudprovider.kubernetes.io/uninitialized"
+          effect: "NoSchedule"
+          value: "true"
+        - key: "CriticalAddonsOnly"
+          operator: "Exists"
+        - key: "node.kubernetes.io/network-unavailable"
+          effect: "NoSchedule"
+          operator: "Exists"
+        - key: "node-role.kubernetes.io/master"
+          effect: NoSchedule
+          operator: Exists
+        - key: "node-role.kubernetes.io/control-plane"
+          effect: NoSchedule
+          operator: Exists
+        - key: "node.kubernetes.io/not-ready"
+          effect: "NoSchedule"
+          value: "true"
+
       containers:
         - name: server
           image: helm-controller
