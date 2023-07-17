@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0](https://github.com/kustomhippie/helm-controller/compare/v1.1.1...v2.0.0) (2023-07-17)
+
+
+### Features
+
+* **major:** update actionhippie/kustomize action to v2 ([886d7ab](https://github.com/kustomhippie/helm-controller/commit/886d7aba1a1f64f813115652b4112cb07efa007e))
+
 ## [1.1.1](https://github.com/kustomhippie/helm-controller/compare/v1.1.0...v1.1.1) (2023-06-30)
 
 ## [1.1.0](https://github.com/kustomhippie/helm-controller/compare/v1.0.0...v1.1.0) (2023-06-19)
