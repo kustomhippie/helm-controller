@@ -69,6 +69,15 @@ spec:
         properties:
           spec:
             properties:
+              authPassCredentials:
+                type: boolean
+              authSecret:
+                nullable: true
+                properties:
+                  name:
+                    nullable: true
+                    type: string
+                type: object
               bootstrap:
                 type: boolean
               chart:
@@ -77,6 +86,15 @@ spec:
               chartContent:
                 nullable: true
                 type: string
+              createNamespace:
+                type: boolean
+              dockerRegistrySecret:
+                nullable: true
+                properties:
+                  name:
+                    nullable: true
+                    type: string
+                type: object
               failurePolicy:
                 nullable: true
                 type: string
@@ -92,10 +110,16 @@ spec:
               repoCA:
                 nullable: true
                 type: string
+              repoCAConfigMap:
+                nullable: true
+                properties:
+                  name:
+                    nullable: true
+                    type: string
+                type: object
               set:
                 additionalProperties:
-                  nullable: true
-                  type: string
+                  x-kubernetes-int-or-string: true
                 nullable: true
                 type: object
               targetNamespace:
