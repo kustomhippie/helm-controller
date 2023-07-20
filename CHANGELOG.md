@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/kustomhippie/helm-controller/compare/v2.0.0...v2.0.1) (2023-07-20)
+
+
+### Bugfixes
+
+* update crd matching release ([826682f](https://github.com/kustomhippie/helm-controller/commit/826682f63800a1ffdf0e68c4a8cf1145de65aa68))
+
 ## [2.0.0](https://github.com/kustomhippie/helm-controller/compare/v1.1.1...v2.0.0) (2023-07-17)
 
 
