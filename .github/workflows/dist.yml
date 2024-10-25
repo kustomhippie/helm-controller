@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
       - name: Build manifest
         uses: actionhippie/kustomize@v2
@@ -20,13 +22,17 @@ jobs:
           version: 4.4.0
           target: dist/manifest.yml
 
+      - name: Source rebase
+        id: rebase
+        run: git pull --autostash --rebase
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
           author_name: GitHub Actions
           author_email: github@webhippie.de
           add: dist/manifest.yml
-          message: automated dist update [skip ci]
+          message: "chore(dist): automated dist update [skip ci]"
           push: true
           commit: --signoff
 
