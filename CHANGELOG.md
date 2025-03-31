@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.6](https://github.com/kustomhippie/helm-controller/compare/v2.1.5...v2.1.6) (2025-03-31)
+
+
+### Bugfixes
+
+* **deps:** update rancher/helm-controller docker tag to v0.16.10 ([#28](https://github.com/kustomhippie/helm-controller/issues/28)) ([7d8e599](https://github.com/kustomhippie/helm-controller/commit/7d8e599ea686f850e4a4451c8b5a6c9f5c8f6370))
+
 ## [2.1.5](https://github.com/kustomhippie/helm-controller/compare/v2.1.4...v2.1.5) (2025-01-20)
 
 
